@@ -25,7 +25,7 @@ const claimProfileButton = (
     href="https://enter.thegrid.id/claimprofile" 
   >
     <Button variant="outline" className="w-full md:w-fit">
-      Claim your profile
+      Claim your profile on The Grid
     </Button>
   </Link>
 );
@@ -49,8 +49,8 @@ export const Header = () => {
       <div className="w-full items-center justify-start">
         <Link href="/" className="flex items-center">
           <Image
-            alt="The grid logo"
-            src="/thegrid-logo.svg"
+            alt="The Solana logo"
+            src="/solana.svg"
             width={160}
             height={1200}
           />
