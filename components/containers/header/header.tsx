@@ -50,7 +50,7 @@ export const Header = () => {
       <div className="w-full items-center justify-start">
         <Link href="/" className="flex items-center">
           <Image
-            alt="App logo"
+            alt="Solana logo"
             src={siteConfig.logoSrc}
             width={160}
             height={1200}
