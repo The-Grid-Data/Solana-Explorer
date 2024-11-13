@@ -11,7 +11,7 @@ export const Hero = () => {
         Explore and discover Solana projects, products and assets.
       </h1>
       <p className="max-w-xl text-center text-lg font-light text-foreground">
-        Browse Solana's ecosystem via <a href="https://thegrid.id">The Grids</a> data.<br></br> Filter to find what matters to you or intergrate this data into your own product using the API.
+        Browse Solanas ecosystem via <a href="https://thegrid.id">The Grids</a> data.<br></br> Filter to find what matters to you or intergrate this data into your own product using the API.
       </p>
     </section>
   );
