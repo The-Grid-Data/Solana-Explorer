@@ -5,34 +5,62 @@ config();
 
 const codegenConfig: CodegenConfig = {
   schema: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT_URL,
-  overwrite: true,
+  // overwrite: true,
   ignoreNoDocuments: true,
+  documents: [
+    'lib/**/*.graphql.ts',
+    '{app,components}/**/*.{tsx,ts}',
+    '!lib/graphql/generated/**/*'
+  ],
   config: {
     skipDocumentsValidation: {
       ignoreRules: ['MaxIntrospectionDepthRule']
     }
   },
-  documents: './lib/graphql/queries/**/*.graphql',
   generates: {
-    'lib/graphql/generated-graphql.ts': {
+    'lib/graphql/generated/': {
+      preset: 'client',
       config: {
-        reactQueryVersion: 5,
-        addInfiniteQuery: true,
-        fetcher: {
-          endpoint: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT_URL,
-          fetchParams: {
-            headers: {
-              'Content-Type': 'application/json'
-            }
+        documentMode: 'string',
+        dedupeFragments: true,
+        extractAllFieldsToTypes: true,
+        experimentalFragmentVariables: true,
+        allowUndefinedQueryVariables: true,
+        strictScalars: true,
+        scalars: {
+          Date: {
+            input: 'string',
+            output: 'string'
+          },
+          Float64: {
+            input: 'number',
+            output: 'number'
+          },
+          Int8: {
+            input: 'number',
+            output: 'number'
+          },
+          Int64: {
+            input: 'number',
+            output: 'number'
+          },
+          String1: {
+            input: 'string',
+            output: 'string'
           }
         }
-      },
-      plugins: ['typescript', 'typescript-operations', 'typescript-react-query']
+      }
+    },
+    'lib/graphql/generated/schema.graphql': {
+      plugins: ['schema-ast'],
+      config: {
+        includeDirectives: true
+      }
     }
-  },
-  hooks: {
-    afterOneFileWrite: ['prettier --write', 'echo']
   }
+  // hooks: {
+  //   afterOneFileWrite: ['prettier --write', 'echo']
+  // }
 };
 
 export default codegenConfig;

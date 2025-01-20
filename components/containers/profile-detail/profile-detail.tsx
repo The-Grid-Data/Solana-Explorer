@@ -1,6 +1,5 @@
 'use client';
 
-import { useGetProfileQuery } from '@/lib/graphql/generated-graphql';
 import ProfileNotFound from './components/profile-not-found';
 import { ProfileHeading } from './components/profile-heading';
 import { ProfileDataSection } from './components/profile-data-section';
@@ -11,6 +10,35 @@ import { AssetCard } from './components/asset-card';
 import { EntityCard } from './components/entity-card';
 import { Banknote, Building2, Package } from 'lucide-react';
 import { OverviewSection } from './components/overview-section';
+import { graphql, FragmentType, useFragment } from '@/lib/graphql/generated';
+import { execute } from '@/lib/graphql/execute';
+import { useQuery } from '@tanstack/react-query';
+
+export const ProfileDetailQuery = graphql(`
+  query getProfileData($where: CProfileInfosBoolExp) {
+    profileInfos(limit: 1, offset: 0, where: $where) {
+      tagLine
+      descriptionShort
+      descriptionLong
+      ...ProfileFragment
+      ...ProfileHeadingFragment
+      root {
+        products {
+          id
+          ...ProductFieldsFragment
+        }
+        assets {
+          id
+          ...AssetFieldsFragment
+        }
+        entities {
+          id
+          ...EntityFieldsFragment
+        }
+      }
+    }
+  }
+`);
 
 export type ProfileDetailProps = {
   profileId: string;
@@ -20,7 +48,12 @@ export const ProfileDetail = ({ profileId }: ProfileDetailProps) => {
   const query = {
     where: { root: { slug: { _eq: profileId } } }
   };
-  const { data, isFetching } = useGetProfileQuery(query);
+
+  const { data, isFetching } = useQuery({
+    queryKey: ['profile', profileId],
+    queryFn: () => execute(ProfileDetailQuery, query)
+  });
+
   const profile = data?.profileInfos?.[0];
 
   if (isFetching) {
@@ -33,7 +66,11 @@ export const ProfileDetail = ({ profileId }: ProfileDetailProps) => {
 
   return (
     <div className="container w-full space-y-10 pb-12">
-      <ProfileHeading queryVariables={query} profile={profile} />
+      <ProfileHeading
+        query={ProfileDetailQuery.toString()}
+        queryVariables={query}
+        profile={profile}
+      />
 
       <section className="space-y-3">
         <ProfileDataPoint label="Tagline" value={profile.tagLine} />
@@ -55,11 +92,9 @@ export const ProfileDetail = ({ profileId }: ProfileDetailProps) => {
         icon={<Package className="h-6 w-6" />}
       >
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {!Boolean(profile?.root?.products?.length) && (
-            <p>No products found</p>
-          )}
-          {Boolean(profile?.root?.products?.length) &&
-            profile?.root?.products?.map(product => (
+          {!Boolean(profile.root?.products?.length) && <p>No products found</p>}
+          {Boolean(profile.root?.products?.length) &&
+            profile.root?.products?.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}
         </div>

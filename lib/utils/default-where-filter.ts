@@ -1,8 +1,8 @@
 import { siteConfig } from '@/lib/site-config';
 import {
-  SearchProfilesQueryVariables,
-  CProfileInfosBoolExp
-} from '@/lib/graphql/generated-graphql';
+  CProfileInfosBoolExp,
+  SearchProfilesQueryVariables
+} from '../graphql/generated/graphql';
 
 const getDefaultWhereFilter = (): CProfileInfosBoolExp => {
   const orConditions: CProfileInfosBoolExp[] = [];
@@ -62,6 +62,18 @@ const getDefaultWhereFilter = (): CProfileInfosBoolExp => {
         profileTags: {
           tagId: {
             _in: siteConfig.tags
+          }
+        }
+      }
+    });
+  }
+
+  if (siteConfig.productSupportsAssetTicker?.length) {
+    orConditions.push({
+      root: {
+        products: {
+          productAssetRelationships: {
+            asset: { ticker: { _in: siteConfig.productSupportsAssetTicker } }
           }
         }
       }

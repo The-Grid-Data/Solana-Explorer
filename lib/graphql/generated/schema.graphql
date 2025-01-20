@@ -1,0 +1,1774 @@
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+type AssetUrls {
+  id: String1
+  rowId: String1
+  tableId: String1
+  url: String1
+  urlType: CUrlTypes
+  urlTypeId: String1
+}
+
+input AssetUrlsBoolExp {
+  _and: [AssetUrlsBoolExp!]
+  _not: AssetUrlsBoolExp
+  _or: [AssetUrlsBoolExp!]
+  id: StringBoolExp
+  rowId: StringBoolExp
+  tableId: StringBoolExp
+  url: StringBoolExp
+  urlType: CUrlTypesBoolExp
+  urlTypeId: StringBoolExp
+}
+
+input AssetUrlsOrderBy {
+  id: OrderBy
+  rowId: OrderBy
+  tableId: OrderBy
+  url: OrderBy
+  urlType: CUrlTypesOrderBy
+  urlTypeId: OrderBy
+}
+
+type CAssetDeployments {
+  asset: CAssets
+  assetId: String1!
+  deploymentId: String1!
+  id: String1!
+  smartContractDeployment: CSmartContractDeployments
+}
+
+type CAssetDeploymentsAggExp {
+  _count: Int!
+  assetId: StringAggExp!
+  deploymentId: StringAggExp!
+  id: StringAggExp!
+}
+
+input CAssetDeploymentsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CAssetDeploymentsOrderBy!]
+  where: assetDeploymentsBoolExp
+}
+
+input CAssetDeploymentsOrderBy {
+  asset: CAssetsOrderBy
+  assetId: OrderBy
+  deploymentId: OrderBy
+  id: OrderBy
+  smartContractDeployment: CSmartContractDeploymentsOrderBy
+}
+
+type CAssetStandards {
+  definition: String1!
+  id: String1!
+  name: String1!
+  smartContractDeployments(limit: Int, offset: Int, order_by: [CSmartContractDeploymentsOrderBy!], where: CSmartContractDeploymentsBoolExp): [CSmartContractDeployments!]
+  smartContractDeploymentsAggregate(filter_input: CSmartContractDeploymentsFilterInput): CSmartContractDeploymentsAggExp!
+}
+
+type CAssetStandardsAggExp {
+  _count: Int!
+  definition: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CAssetStandardsBoolExp {
+  _and: [CAssetStandardsBoolExp!]
+  _not: CAssetStandardsBoolExp
+  _or: [CAssetStandardsBoolExp!]
+  definition: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+  smartContractDeployments: CSmartContractDeploymentsBoolExp
+}
+
+input CAssetStandardsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CAssetStandardsOrderBy!]
+  where: CAssetStandardsBoolExp
+}
+
+input CAssetStandardsOrderBy {
+  definition: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+type CAssetStatuses {
+  assets(limit: Int, offset: Int, order_by: [CAssetsOrderBy!], where: CAssetsBoolExp): [CAssets!]
+  assetsAggregate(filter_input: CAssetsFilterInput): CAssetsAggExp!
+  definition: String1!
+  id: String1!
+  name: String1!
+}
+
+type CAssetStatusesAggExp {
+  _count: Int!
+  definition: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CAssetStatusesBoolExp {
+  _and: [CAssetStatusesBoolExp!]
+  _not: CAssetStatusesBoolExp
+  _or: [CAssetStatusesBoolExp!]
+  assets: CAssetsBoolExp
+  definition: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+}
+
+input CAssetStatusesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CAssetStatusesOrderBy!]
+  where: CAssetStatusesBoolExp
+}
+
+input CAssetStatusesOrderBy {
+  definition: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+type CAssetSupportTypes {
+  definition: String1!
+  id: String1!
+  name: String1!
+  productAssetRelationships(limit: Int, offset: Int, order_by: [CProductAssetRelationshipsOrderBy!], where: CProductAssetRelationshipsBoolExp): [CProductAssetRelationships!]
+  productAssetRelationshipsAggregate(filter_input: CProductAssetRelationshipsFilterInput): CProductAssetRelationshipsAggExp!
+}
+
+type CAssetSupportTypesAggExp {
+  _count: Int!
+  definition: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CAssetSupportTypesBoolExp {
+  _and: [CAssetSupportTypesBoolExp!]
+  _not: CAssetSupportTypesBoolExp
+  _or: [CAssetSupportTypesBoolExp!]
+  definition: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+  productAssetRelationships: CProductAssetRelationshipsBoolExp
+}
+
+input CAssetSupportTypesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CAssetSupportTypesOrderBy!]
+  where: CAssetSupportTypesBoolExp
+}
+
+input CAssetSupportTypesOrderBy {
+  definition: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+type CAssetTypes {
+  assets(limit: Int, offset: Int, order_by: [CAssetsOrderBy!], where: CAssetsBoolExp): [CAssets!]
+  assetsAggregate(filter_input: CAssetsFilterInput): CAssetsAggExp!
+  definition: String1!
+  id: String1!
+  name: String1!
+}
+
+type CAssetTypesAggExp {
+  _count: Int!
+  definition: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CAssetTypesBoolExp {
+  _and: [CAssetTypesBoolExp!]
+  _not: CAssetTypesBoolExp
+  _or: [CAssetTypesBoolExp!]
+  assets: CAssetsBoolExp
+  definition: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+}
+
+input CAssetTypesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CAssetTypesOrderBy!]
+  where: CAssetTypesBoolExp
+}
+
+input CAssetTypesOrderBy {
+  definition: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+type CAssets {
+  assetDeployments(limit: Int, offset: Int, order_by: [CAssetDeploymentsOrderBy!], where: assetDeploymentsBoolExp): [CAssetDeployments!]
+  assetDeploymentsAggregate(filter_input: CAssetDeploymentsFilterInput): CAssetDeploymentsAggExp!
+  assetStatus: CAssetStatuses
+  assetStatusId: String1
+  assetType: CAssetTypes
+  assetTypeId: String1
+  derivativeAssets(limit: Int, offset: Int, order_by: [CDerivativeAssetsOrderBy!], where: CDerivativeAssetsBoolExp): [CDerivativeAssets!]
+  derivativeAssetsAggregate(filter_input: CDerivativeAssetsFilterInput): CDerivativeAssetsAggExp!
+  derivativeAssetsByBaseAssetId(limit: Int, offset: Int, order_by: [CDerivativeAssetsOrderBy!], where: CDerivativeAssetsBoolExp): [CDerivativeAssets!]
+  derivativeAssetsByBaseAssetIdAggregate(filter_input: CDerivativeAssetsFilterInput): CDerivativeAssetsAggExp!
+  description: String1!
+  icon: String1!
+  id: String1!
+  name: String1!
+  productAssetRelationships(limit: Int, offset: Int, order_by: [CProductAssetRelationshipsOrderBy!], where: CProductAssetRelationshipsBoolExp): [CProductAssetRelationships!]
+  productAssetRelationshipsAggregate(filter_input: CProductAssetRelationshipsFilterInput): CProductAssetRelationshipsAggExp!
+  root: CRoots
+  rootId: String1!
+  ticker: String1!
+  urls(limit: Int, offset: Int, order_by: [AssetUrlsOrderBy!], where: AssetUrlsBoolExp): [AssetUrls!]
+}
+
+type CAssetsAggExp {
+  _count: Int!
+  assetStatusId: StringAggExp!
+  assetTypeId: StringAggExp!
+  description: StringAggExp!
+  icon: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+  rootId: StringAggExp!
+  ticker: StringAggExp!
+}
+
+input CAssetsBoolExp {
+  _and: [CAssetsBoolExp!]
+  _not: CAssetsBoolExp
+  _or: [CAssetsBoolExp!]
+  assetDeployments: assetDeploymentsBoolExp
+  assetStatus: CAssetStatusesBoolExp
+  assetStatusId: StringBoolExp
+  assetType: CAssetTypesBoolExp
+  assetTypeId: StringBoolExp
+  derivativeAssets: CDerivativeAssetsBoolExp
+  derivativeAssetsByBaseAssetId: CDerivativeAssetsBoolExp
+  description: StringBoolExp
+  icon: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+  productAssetRelationships: CProductAssetRelationshipsBoolExp
+  root: CRootsBoolExp
+  rootId: StringBoolExp
+  ticker: StringBoolExp
+}
+
+input CAssetsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CAssetsOrderBy!]
+  where: CAssetsBoolExp
+}
+
+input CAssetsOrderBy {
+  assetStatus: CAssetStatusesOrderBy
+  assetStatusId: OrderBy
+  assetType: CAssetTypesOrderBy
+  assetTypeId: OrderBy
+  description: OrderBy
+  icon: OrderBy
+  id: OrderBy
+  name: OrderBy
+  root: CRootsOrderBy
+  rootId: OrderBy
+  ticker: OrderBy
+}
+
+type CCoreTableNames {
+  id: String1!
+  tableName: String1!
+  urls(limit: Int, offset: Int, order_by: [CUrlsOrderBy!], where: CUrlsBoolExp): [CUrls!]
+  urlsAggregate(filter_input: CUrlsFilterInput): CUrlsAggExp!
+}
+
+type CCoreTableNamesAggExp {
+  _count: Int!
+  id: StringAggExp!
+  tableName: StringAggExp!
+}
+
+input CCoreTableNamesBoolExp {
+  _and: [CCoreTableNamesBoolExp!]
+  _not: CCoreTableNamesBoolExp
+  _or: [CCoreTableNamesBoolExp!]
+  id: StringBoolExp
+  tableName: StringBoolExp
+  urls: CUrlsBoolExp
+}
+
+input CCoreTableNamesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CCoreTableNamesOrderBy!]
+  where: CCoreTableNamesBoolExp
+}
+
+input CCoreTableNamesOrderBy {
+  id: OrderBy
+  tableName: OrderBy
+}
+
+type CCountries {
+  code: String1!
+  entities(limit: Int, offset: Int, order_by: [CEntitiesOrderBy!], where: CEntitiesBoolExp): [CEntities!]
+  entitiesAggregate(filter_input: CEntitiesFilterInput): CEntitiesAggExp!
+  id: String1!
+  name: String1!
+}
+
+type CCountriesAggExp {
+  _count: Int!
+  code: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CCountriesBoolExp {
+  _and: [CCountriesBoolExp!]
+  _not: CCountriesBoolExp
+  _or: [CCountriesBoolExp!]
+  code: StringBoolExp
+  entities: CEntitiesBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+}
+
+input CCountriesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CCountriesOrderBy!]
+  where: CCountriesBoolExp
+}
+
+input CCountriesOrderBy {
+  code: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+type CDeploymentTypes {
+  definition: String1!
+  id: String1!
+  name: String1!
+  smartContractDeployments(limit: Int, offset: Int, order_by: [CSmartContractDeploymentsOrderBy!], where: CSmartContractDeploymentsBoolExp): [CSmartContractDeployments!]
+  smartContractDeploymentsAggregate(filter_input: CSmartContractDeploymentsFilterInput): CSmartContractDeploymentsAggExp!
+}
+
+type CDeploymentTypesAggExp {
+  _count: Int!
+  definition: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CDeploymentTypesBoolExp {
+  _and: [CDeploymentTypesBoolExp!]
+  _not: CDeploymentTypesBoolExp
+  _or: [CDeploymentTypesBoolExp!]
+  definition: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+  smartContractDeployments: CSmartContractDeploymentsBoolExp
+}
+
+input CDeploymentTypesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CDeploymentTypesOrderBy!]
+  where: CDeploymentTypesBoolExp
+}
+
+input CDeploymentTypesOrderBy {
+  definition: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+type CDerivativeAssets {
+  asset: CAssets
+  assetByBaseAssetId: CAssets
+  baseAssetId: String1!
+  derivativeAssetId: String1!
+  id: String1!
+}
+
+type CDerivativeAssetsAggExp {
+  _count: Int!
+  baseAssetId: StringAggExp!
+  derivativeAssetId: StringAggExp!
+  id: StringAggExp!
+}
+
+input CDerivativeAssetsBoolExp {
+  _and: [CDerivativeAssetsBoolExp!]
+  _not: CDerivativeAssetsBoolExp
+  _or: [CDerivativeAssetsBoolExp!]
+  asset: CAssetsBoolExp
+  assetByBaseAssetId: CAssetsBoolExp
+  baseAssetId: StringBoolExp
+  derivativeAssetId: StringBoolExp
+  id: StringBoolExp
+}
+
+input CDerivativeAssetsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CDerivativeAssetsOrderBy!]
+  where: CDerivativeAssetsBoolExp
+}
+
+input CDerivativeAssetsOrderBy {
+  asset: CAssetsOrderBy
+  assetByBaseAssetId: CAssetsOrderBy
+  baseAssetId: OrderBy
+  derivativeAssetId: OrderBy
+  id: OrderBy
+}
+
+type CEntities {
+  address: String1!
+  country: CCountries
+  countryId: String1
+  dateOfIncorporation: Date
+  entityType: CEntityTypes
+  entityTypeId: String1
+  id: String1!
+  leiNumber: String1!
+  localRegistrationNumber: String1!
+  name: String1!
+  root: CRoots
+  rootId: String1!
+  taxIdentificationNumber: String1!
+  tradeName: String1!
+  urls(limit: Int, offset: Int, order_by: [EntityUrlsOrderBy!], where: EntityUrlsBoolExp): [EntityUrls!]
+}
+
+type CEntitiesAggExp {
+  _count: Int!
+  address: StringAggExp!
+  countryId: StringAggExp!
+  dateOfIncorporation: DateAggExp!
+  entityTypeId: StringAggExp!
+  id: StringAggExp!
+  leiNumber: StringAggExp!
+  localRegistrationNumber: StringAggExp!
+  name: StringAggExp!
+  rootId: StringAggExp!
+  taxIdentificationNumber: StringAggExp!
+  tradeName: StringAggExp!
+}
+
+input CEntitiesBoolExp {
+  _and: [CEntitiesBoolExp!]
+  _not: CEntitiesBoolExp
+  _or: [CEntitiesBoolExp!]
+  address: StringBoolExp
+  country: CCountriesBoolExp
+  countryId: StringBoolExp
+  dateOfIncorporation: DateBoolExp
+  entityType: CEntityTypesBoolExp
+  entityTypeId: StringBoolExp
+  id: StringBoolExp
+  leiNumber: StringBoolExp
+  localRegistrationNumber: StringBoolExp
+  name: StringBoolExp
+  root: CRootsBoolExp
+  rootId: StringBoolExp
+  taxIdentificationNumber: StringBoolExp
+  tradeName: StringBoolExp
+}
+
+input CEntitiesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CEntitiesOrderBy!]
+  where: CEntitiesBoolExp
+}
+
+input CEntitiesOrderBy {
+  address: OrderBy
+  country: CCountriesOrderBy
+  countryId: OrderBy
+  dateOfIncorporation: OrderBy
+  entityType: CEntityTypesOrderBy
+  entityTypeId: OrderBy
+  id: OrderBy
+  leiNumber: OrderBy
+  localRegistrationNumber: OrderBy
+  name: OrderBy
+  root: CRootsOrderBy
+  rootId: OrderBy
+  taxIdentificationNumber: OrderBy
+  tradeName: OrderBy
+}
+
+type CEntityTypes {
+  definition: String1!
+  entities(limit: Int, offset: Int, order_by: [CEntitiesOrderBy!], where: CEntitiesBoolExp): [CEntities!]
+  entitiesAggregate(filter_input: CEntitiesFilterInput): CEntitiesAggExp!
+  id: String1!
+  name: String1!
+}
+
+type CEntityTypesAggExp {
+  _count: Int!
+  definition: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CEntityTypesBoolExp {
+  _and: [CEntityTypesBoolExp!]
+  _not: CEntityTypesBoolExp
+  _or: [CEntityTypesBoolExp!]
+  definition: StringBoolExp
+  entities: CEntitiesBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+}
+
+input CEntityTypesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CEntityTypesOrderBy!]
+  where: CEntityTypesBoolExp
+}
+
+input CEntityTypesOrderBy {
+  definition: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+type CProductAssetRelationships {
+  asset: CAssets
+  assetId: String1!
+  assetSupportType: CAssetSupportTypes
+  id: String1!
+  product: CProducts
+  productId: String1!
+  typeOfSupportId: String1
+}
+
+type CProductAssetRelationshipsAggExp {
+  _count: Int!
+  assetId: StringAggExp!
+  id: StringAggExp!
+  productId: StringAggExp!
+  typeOfSupportId: StringAggExp!
+}
+
+input CProductAssetRelationshipsBoolExp {
+  _and: [CProductAssetRelationshipsBoolExp!]
+  _not: CProductAssetRelationshipsBoolExp
+  _or: [CProductAssetRelationshipsBoolExp!]
+  asset: CAssetsBoolExp
+  assetId: StringBoolExp
+  assetSupportType: CAssetSupportTypesBoolExp
+  id: StringBoolExp
+  product: CProductsBoolExp
+  productId: StringBoolExp
+  typeOfSupportId: StringBoolExp
+}
+
+input CProductAssetRelationshipsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CProductAssetRelationshipsOrderBy!]
+  where: CProductAssetRelationshipsBoolExp
+}
+
+input CProductAssetRelationshipsOrderBy {
+  asset: CAssetsOrderBy
+  assetId: OrderBy
+  assetSupportType: CAssetSupportTypesOrderBy
+  id: OrderBy
+  product: CProductsOrderBy
+  productId: OrderBy
+  typeOfSupportId: OrderBy
+}
+
+type CProductDeployments {
+  deploymentId: String1!
+  id: String1!
+  product: CProducts
+  productId: String1!
+  smartContractDeployment: CSmartContractDeployments
+}
+
+type CProductDeploymentsAggExp {
+  _count: Int!
+  deploymentId: StringAggExp!
+  id: StringAggExp!
+  productId: StringAggExp!
+}
+
+input CProductDeploymentsBoolExp {
+  _and: [CProductDeploymentsBoolExp!]
+  _not: CProductDeploymentsBoolExp
+  _or: [CProductDeploymentsBoolExp!]
+  deploymentId: StringBoolExp
+  id: StringBoolExp
+  product: CProductsBoolExp
+  productId: StringBoolExp
+  smartContractDeployment: CSmartContractDeploymentsBoolExp
+}
+
+input CProductDeploymentsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CProductDeploymentsOrderBy!]
+  where: CProductDeploymentsBoolExp
+}
+
+input CProductDeploymentsOrderBy {
+  deploymentId: OrderBy
+  id: OrderBy
+  product: CProductsOrderBy
+  productId: OrderBy
+  smartContractDeployment: CSmartContractDeploymentsOrderBy
+}
+
+type CProductStatuses {
+  definition: String1!
+  id: String1!
+  name: String1!
+  products(limit: Int, offset: Int, order_by: [CProductsOrderBy!], where: CProductsBoolExp): [CProducts!]
+  productsAggregate(filter_input: CProductsFilterInput): CProductsAggExp!
+}
+
+type CProductStatusesAggExp {
+  _count: Int!
+  definition: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CProductStatusesBoolExp {
+  _and: [CProductStatusesBoolExp!]
+  _not: CProductStatusesBoolExp
+  _or: [CProductStatusesBoolExp!]
+  definition: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+  products: CProductsBoolExp
+}
+
+input CProductStatusesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CProductStatusesOrderBy!]
+  where: CProductStatusesBoolExp
+}
+
+input CProductStatusesOrderBy {
+  definition: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+type CProductTypes {
+  definition: String1!
+  id: String1!
+  name: String1!
+  products(limit: Int, offset: Int, order_by: [CProductsOrderBy!], where: CProductsBoolExp): [CProducts!]
+  productsAggregate(filter_input: CProductsFilterInput): CProductsAggExp!
+}
+
+type CProductTypesAggExp {
+  _count: Int!
+  definition: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CProductTypesBoolExp {
+  _and: [CProductTypesBoolExp!]
+  _not: CProductTypesBoolExp
+  _or: [CProductTypesBoolExp!]
+  definition: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+  products: CProductsBoolExp
+}
+
+input CProductTypesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CProductTypesOrderBy!]
+  where: CProductTypesBoolExp
+}
+
+input CProductTypesOrderBy {
+  definition: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+type CProducts {
+  description: String1!
+  id: String1!
+  isMainProduct: Int8!
+  launchDate: Date
+  name: String1!
+  productAssetRelationships(limit: Int, offset: Int, order_by: [CProductAssetRelationshipsOrderBy!], where: CProductAssetRelationshipsBoolExp): [CProductAssetRelationships!]
+  productAssetRelationshipsAggregate(filter_input: CProductAssetRelationshipsFilterInput): CProductAssetRelationshipsAggExp!
+  productDeployments(limit: Int, offset: Int, order_by: [CProductDeploymentsOrderBy!], where: CProductDeploymentsBoolExp): [CProductDeployments!]
+  productDeploymentsAggregate(filter_input: CProductDeploymentsFilterInput): CProductDeploymentsAggExp!
+  productStatus: CProductStatuses
+  productStatusId: String1
+  productType: CProductTypes
+  productTypeId: String1
+  root: CRoots
+  rootId: String1!
+  smartContractDeployments(limit: Int, offset: Int, order_by: [CSmartContractDeploymentsOrderBy!], where: CSmartContractDeploymentsBoolExp): [CSmartContractDeployments!]
+  smartContractDeploymentsAggregate(filter_input: CSmartContractDeploymentsFilterInput): CSmartContractDeploymentsAggExp!
+  supportsProducts(limit: Int, offset: Int, order_by: [CSupportsProductsOrderBy!], where: CSupportsProductsBoolExp): [CSupportsProducts!]
+  supportsProductsAggregate(filter_input: CSupportsProductsFilterInput): CSupportsProductsAggExp!
+  supportsProductsBySupportsProductId(limit: Int, offset: Int, order_by: [CSupportsProductsOrderBy!], where: CSupportsProductsBoolExp): [CSupportsProducts!]
+  supportsProductsBySupportsProductIdAggregate(filter_input: CSupportsProductsFilterInput): CSupportsProductsAggExp!
+  urls(limit: Int, offset: Int, order_by: [ProductUrlsOrderBy!], where: ProductUrlsBoolExp): [ProductUrls!]
+}
+
+type CProductsAggExp {
+  _count: Int!
+  description: StringAggExp!
+  id: StringAggExp!
+  isMainProduct: Int8AggExp!
+  launchDate: DateAggExp!
+  name: StringAggExp!
+  productStatusId: StringAggExp!
+  productTypeId: StringAggExp!
+  rootId: StringAggExp!
+}
+
+input CProductsBoolExp {
+  _and: [CProductsBoolExp!]
+  _not: CProductsBoolExp
+  _or: [CProductsBoolExp!]
+  description: StringBoolExp
+  id: StringBoolExp
+  isMainProduct: Int8BoolExp
+  launchDate: DateBoolExp
+  name: StringBoolExp
+  productAssetRelationships: CProductAssetRelationshipsBoolExp
+  productDeployments: CProductDeploymentsBoolExp
+  productStatus: CProductStatusesBoolExp
+  productStatusId: StringBoolExp
+  productType: CProductTypesBoolExp
+  productTypeId: StringBoolExp
+  root: CRootsBoolExp
+  rootId: StringBoolExp
+  smartContractDeployments: CSmartContractDeploymentsBoolExp
+  supportsProducts: CSupportsProductsBoolExp
+  supportsProductsBySupportsProductId: CSupportsProductsBoolExp
+}
+
+input CProductsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CProductsOrderBy!]
+  where: CProductsBoolExp
+}
+
+input CProductsOrderBy {
+  description: OrderBy
+  id: OrderBy
+  isMainProduct: OrderBy
+  launchDate: OrderBy
+  name: OrderBy
+  productStatus: CProductStatusesOrderBy
+  productStatusId: OrderBy
+  productType: CProductTypesOrderBy
+  productTypeId: OrderBy
+  root: CRootsOrderBy
+  rootId: OrderBy
+}
+
+type CProfileInfos {
+  descriptionLong: String1!
+  descriptionShort: String1!
+  foundingDate: Date
+  id: String1!
+  logo: String1!
+  name: String1!
+  profileSector: CProfileSectors
+  profileSectorId: String1
+  profileStatus: CProfileStatuses
+  profileStatusId: String1
+  profileType: CProfileTypes
+  profileTypeId: String1
+  root: CRoots
+  rootId: String1!
+  """Self promotion field"""
+  tagLine: String1!
+  urls(limit: Int, offset: Int, order_by: [ProfileInfoUrlsOrderBy!], where: ProfileInfoUrlsBoolExp): [ProfileInfoUrls!]
+}
+
+type CProfileInfosAggExp {
+  _count: Int!
+  descriptionLong: StringAggExp!
+  descriptionShort: StringAggExp!
+  foundingDate: DateAggExp!
+  id: StringAggExp!
+  logo: StringAggExp!
+  name: StringAggExp!
+  profileSectorId: StringAggExp!
+  profileStatusId: StringAggExp!
+  profileTypeId: StringAggExp!
+  rootId: StringAggExp!
+  tagLine: StringAggExp!
+}
+
+input CProfileInfosBoolExp {
+  _and: [CProfileInfosBoolExp!]
+  _not: CProfileInfosBoolExp
+  _or: [CProfileInfosBoolExp!]
+  descriptionLong: StringBoolExp
+  descriptionShort: StringBoolExp
+  foundingDate: DateBoolExp
+  id: StringBoolExp
+  logo: StringBoolExp
+  name: StringBoolExp
+  profileSector: CProfileSectorsBoolExp
+  profileSectorId: StringBoolExp
+  profileStatus: CProfileStatusesBoolExp
+  profileStatusId: StringBoolExp
+  profileType: CProfileTypesBoolExp
+  profileTypeId: StringBoolExp
+  root: CRootsBoolExp
+  rootId: StringBoolExp
+  tagLine: StringBoolExp
+}
+
+input CProfileInfosFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CProfileInfosOrderBy!]
+  where: CProfileInfosBoolExp
+}
+
+input CProfileInfosOrderBy {
+  descriptionLong: OrderBy
+  descriptionShort: OrderBy
+  foundingDate: OrderBy
+  id: OrderBy
+  logo: OrderBy
+  name: OrderBy
+  profileSector: CProfileSectorsOrderBy
+  profileSectorId: OrderBy
+  profileStatus: CProfileStatusesOrderBy
+  profileStatusId: OrderBy
+  profileType: CProfileTypesOrderBy
+  profileTypeId: OrderBy
+  root: CRootsOrderBy
+  rootId: OrderBy
+  tagLine: OrderBy
+}
+
+type CProfileSectors {
+  definition: String1!
+  id: String1!
+  name: String1!
+  profileInfos(limit: Int, offset: Int, order_by: [CProfileInfosOrderBy!], where: CProfileInfosBoolExp): [CProfileInfos!]
+  profileInfosAggregate(filter_input: CProfileInfosFilterInput): CProfileInfosAggExp!
+}
+
+type CProfileSectorsAggExp {
+  _count: Int!
+  definition: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CProfileSectorsBoolExp {
+  _and: [CProfileSectorsBoolExp!]
+  _not: CProfileSectorsBoolExp
+  _or: [CProfileSectorsBoolExp!]
+  definition: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+  profileInfos: CProfileInfosBoolExp
+}
+
+input CProfileSectorsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CProfileSectorsOrderBy!]
+  where: CProfileSectorsBoolExp
+}
+
+input CProfileSectorsOrderBy {
+  definition: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+type CProfileStatuses {
+  definition: String1!
+  id: String1!
+  name: String1!
+  profileInfos(limit: Int, offset: Int, order_by: [CProfileInfosOrderBy!], where: CProfileInfosBoolExp): [CProfileInfos!]
+  profileInfosAggregate(filter_input: CProfileInfosFilterInput): CProfileInfosAggExp!
+}
+
+type CProfileStatusesAggExp {
+  _count: Int!
+  definition: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CProfileStatusesBoolExp {
+  _and: [CProfileStatusesBoolExp!]
+  _not: CProfileStatusesBoolExp
+  _or: [CProfileStatusesBoolExp!]
+  definition: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+  profileInfos: CProfileInfosBoolExp
+}
+
+input CProfileStatusesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CProfileStatusesOrderBy!]
+  where: CProfileStatusesBoolExp
+}
+
+input CProfileStatusesOrderBy {
+  definition: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+""" """
+type CProfileTags {
+  id: String1!
+  root: CRoots
+  rootId: String1!
+  tag: CTags
+  tagId: String1!
+}
+
+type CProfileTagsAggExp {
+  _count: Int!
+  id: StringAggExp!
+  rootId: StringAggExp!
+  tagId: StringAggExp!
+}
+
+input CProfileTagsBoolExp {
+  _and: [CProfileTagsBoolExp!]
+  _not: CProfileTagsBoolExp
+  _or: [CProfileTagsBoolExp!]
+  id: StringBoolExp
+  root: CRootsBoolExp
+  rootId: StringBoolExp
+  tag: CTagsBoolExp
+  tagId: StringBoolExp
+}
+
+input CProfileTagsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CProfileTagsOrderBy!]
+  where: CProfileTagsBoolExp
+}
+
+input CProfileTagsOrderBy {
+  id: OrderBy
+  root: CRootsOrderBy
+  rootId: OrderBy
+  tag: CTagsOrderBy
+  tagId: OrderBy
+}
+
+type CProfileTypes {
+  definition: String1!
+  id: String1!
+  name: String1!
+  profileInfos(limit: Int, offset: Int, order_by: [CProfileInfosOrderBy!], where: CProfileInfosBoolExp): [CProfileInfos!]
+  profileInfosAggregate(filter_input: CProfileInfosFilterInput): CProfileInfosAggExp!
+}
+
+type CProfileTypesAggExp {
+  _count: Int!
+  definition: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CProfileTypesBoolExp {
+  _and: [CProfileTypesBoolExp!]
+  _not: CProfileTypesBoolExp
+  _or: [CProfileTypesBoolExp!]
+  definition: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+  profileInfos: CProfileInfosBoolExp
+}
+
+input CProfileTypesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CProfileTypesOrderBy!]
+  where: CProfileTypesBoolExp
+}
+
+input CProfileTypesOrderBy {
+  definition: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+type CRoots {
+  assets(limit: Int, offset: Int, order_by: [CAssetsOrderBy!], where: CAssetsBoolExp): [CAssets!]
+  assetsAggregate(filter_input: CAssetsFilterInput): CAssetsAggExp!
+  entities(limit: Int, offset: Int, order_by: [CEntitiesOrderBy!], where: CEntitiesBoolExp): [CEntities!]
+  entitiesAggregate(filter_input: CEntitiesFilterInput): CEntitiesAggExp!
+  id: String1!
+  products(limit: Int, offset: Int, order_by: [CProductsOrderBy!], where: CProductsBoolExp): [CProducts!]
+  productsAggregate(filter_input: CProductsFilterInput): CProductsAggExp!
+  profileInfos(limit: Int, offset: Int, order_by: [CProfileInfosOrderBy!], where: CProfileInfosBoolExp): [CProfileInfos!]
+  profileInfosAggregate(filter_input: CProfileInfosFilterInput): CProfileInfosAggExp!
+  profileTags(limit: Int, offset: Int, order_by: [CProfileTagsOrderBy!], where: CProfileTagsBoolExp): [CProfileTags!]
+  profileTagsAggregate(filter_input: CProfileTagsFilterInput): CProfileTagsAggExp!
+  slug: String1!
+  socials(limit: Int, offset: Int, order_by: [CSocialsOrderBy!], where: CSocialsBoolExp): [CSocials!]
+  socialsAggregate(filter_input: CSocialsFilterInput): CSocialsAggExp!
+  urlMain: String1!
+}
+
+type CRootsAggExp {
+  _count: Int!
+  id: StringAggExp!
+  slug: StringAggExp!
+  urlMain: StringAggExp!
+}
+
+input CRootsBoolExp {
+  _and: [CRootsBoolExp!]
+  _not: CRootsBoolExp
+  _or: [CRootsBoolExp!]
+  assets: CAssetsBoolExp
+  entities: CEntitiesBoolExp
+  id: StringBoolExp
+  products: CProductsBoolExp
+  profileInfos: CProfileInfosBoolExp
+  profileTags: CProfileTagsBoolExp
+  slug: StringBoolExp
+  socials: CSocialsBoolExp
+  urlMain: StringBoolExp
+}
+
+input CRootsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CRootsOrderBy!]
+  where: CRootsBoolExp
+}
+
+input CRootsOrderBy {
+  id: OrderBy
+  slug: OrderBy
+  urlMain: OrderBy
+}
+
+type CSmartContractDeployments {
+  assetDeployments(limit: Int, offset: Int, order_by: [CAssetDeploymentsOrderBy!], where: assetDeploymentsBoolExp): [CAssetDeployments!]
+  assetDeploymentsAggregate(filter_input: CAssetDeploymentsFilterInput): CAssetDeploymentsAggExp!
+  assetStandard: CAssetStandards
+  deployedOnId: String1
+  deployedOnProduct: CProducts
+  deploymentType: CDeploymentTypes
+  deploymentTypeId: String1
+  id: String1!
+  isOfStandardId: String1
+  productDeployments(limit: Int, offset: Int, order_by: [CProductDeploymentsOrderBy!], where: CProductDeploymentsBoolExp): [CProductDeployments!]
+  productDeploymentsAggregate(filter_input: CProductDeploymentsFilterInput): CProductDeploymentsAggExp!
+  smartContracts(limit: Int, offset: Int, order_by: [CSmartContractsOrderBy!], where: CSmartContractsBoolExp): [CSmartContracts!]
+  smartContractsAggregate(filter_input: CSmartContractsFilterInput): CSmartContractsAggExp!
+}
+
+type CSmartContractDeploymentsAggExp {
+  _count: Int!
+  deployedOnId: StringAggExp!
+  deploymentTypeId: StringAggExp!
+  id: StringAggExp!
+  isOfStandardId: StringAggExp!
+}
+
+input CSmartContractDeploymentsBoolExp {
+  _and: [CSmartContractDeploymentsBoolExp!]
+  _not: CSmartContractDeploymentsBoolExp
+  _or: [CSmartContractDeploymentsBoolExp!]
+  assetDeployments: assetDeploymentsBoolExp
+  assetStandard: CAssetStandardsBoolExp
+  deployedOnId: StringBoolExp
+  deployedOnProduct: CProductsBoolExp
+  deploymentType: CDeploymentTypesBoolExp
+  deploymentTypeId: StringBoolExp
+  id: StringBoolExp
+  isOfStandardId: StringBoolExp
+  productDeployments: CProductDeploymentsBoolExp
+  smartContracts: CSmartContractsBoolExp
+}
+
+input CSmartContractDeploymentsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CSmartContractDeploymentsOrderBy!]
+  where: CSmartContractDeploymentsBoolExp
+}
+
+input CSmartContractDeploymentsOrderBy {
+  assetStandard: CAssetStandardsOrderBy
+  deployedOnId: OrderBy
+  deployedOnProduct: CProductsOrderBy
+  deploymentType: CDeploymentTypesOrderBy
+  deploymentTypeId: OrderBy
+  id: OrderBy
+  isOfStandardId: OrderBy
+}
+
+type CSmartContracts {
+  address: String1!
+  deploymentDate: Date
+  deploymentId: String1
+  id: String1!
+  name: String1!
+  smartContractDeployment: CSmartContractDeployments
+}
+
+type CSmartContractsAggExp {
+  _count: Int!
+  address: StringAggExp!
+  deploymentDate: DateAggExp!
+  deploymentId: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CSmartContractsBoolExp {
+  _and: [CSmartContractsBoolExp!]
+  _not: CSmartContractsBoolExp
+  _or: [CSmartContractsBoolExp!]
+  address: StringBoolExp
+  deploymentDate: DateBoolExp
+  deploymentId: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+  smartContractDeployment: CSmartContractDeploymentsBoolExp
+}
+
+input CSmartContractsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CSmartContractsOrderBy!]
+  where: CSmartContractsBoolExp
+}
+
+input CSmartContractsOrderBy {
+  address: OrderBy
+  deploymentDate: OrderBy
+  deploymentId: OrderBy
+  id: OrderBy
+  name: OrderBy
+  smartContractDeployment: CSmartContractDeploymentsOrderBy
+}
+
+type CSocialTypes {
+  definition: String1!
+  id: String1!
+  name: String1!
+  socials(limit: Int, offset: Int, order_by: [CSocialsOrderBy!], where: CSocialsBoolExp): [CSocials!]
+  socialsAggregate(filter_input: CSocialsFilterInput): CSocialsAggExp!
+}
+
+type CSocialTypesAggExp {
+  _count: Int!
+  definition: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CSocialTypesBoolExp {
+  _and: [CSocialTypesBoolExp!]
+  _not: CSocialTypesBoolExp
+  _or: [CSocialTypesBoolExp!]
+  definition: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+  socials: CSocialsBoolExp
+}
+
+input CSocialTypesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CSocialTypesOrderBy!]
+  where: CSocialTypesBoolExp
+}
+
+input CSocialTypesOrderBy {
+  definition: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+type CSocials {
+  id: String1!
+  name: String1!
+  root: CRoots
+  rootId: String1!
+  socialType: CSocialTypes
+  socialTypeId: String1
+  urls(limit: Int, offset: Int, order_by: [SocialUrlsOrderBy!], where: SocialUrlsBoolExp): [SocialUrls!]
+}
+
+type CSocialsAggExp {
+  _count: Int!
+  id: StringAggExp!
+  name: StringAggExp!
+  rootId: StringAggExp!
+  socialTypeId: StringAggExp!
+}
+
+input CSocialsBoolExp {
+  _and: [CSocialsBoolExp!]
+  _not: CSocialsBoolExp
+  _or: [CSocialsBoolExp!]
+  id: StringBoolExp
+  name: StringBoolExp
+  root: CRootsBoolExp
+  rootId: StringBoolExp
+  socialType: CSocialTypesBoolExp
+  socialTypeId: StringBoolExp
+}
+
+input CSocialsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CSocialsOrderBy!]
+  where: CSocialsBoolExp
+}
+
+input CSocialsOrderBy {
+  id: OrderBy
+  name: OrderBy
+  root: CRootsOrderBy
+  rootId: OrderBy
+  socialType: CSocialTypesOrderBy
+  socialTypeId: OrderBy
+}
+
+"""Table mapping product support relationships"""
+type CSupportsProducts {
+  id: String1!
+  product: CProducts
+  productId: String1!
+  supportsProduct: CProducts
+  supportsProductId: String1!
+}
+
+type CSupportsProductsAggExp {
+  _count: Int!
+  id: StringAggExp!
+  productId: StringAggExp!
+  supportsProductId: StringAggExp!
+}
+
+input CSupportsProductsBoolExp {
+  _and: [CSupportsProductsBoolExp!]
+  _not: CSupportsProductsBoolExp
+  _or: [CSupportsProductsBoolExp!]
+  id: StringBoolExp
+  product: CProductsBoolExp
+  productId: StringBoolExp
+  supportsProduct: CProductsBoolExp
+  supportsProductId: StringBoolExp
+}
+
+input CSupportsProductsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CSupportsProductsOrderBy!]
+  where: CSupportsProductsBoolExp
+}
+
+input CSupportsProductsOrderBy {
+  id: OrderBy
+  product: CProductsOrderBy
+  productId: OrderBy
+  supportsProduct: CProductsOrderBy
+  supportsProductId: OrderBy
+}
+
+type CTagTypes {
+  definition: String1!
+  id: String1!
+  name: String1!
+  tags(limit: Int, offset: Int, order_by: [CTagsOrderBy!], where: CTagsBoolExp): [CTags!]
+  tagsAggregate(filter_input: CTagsFilterInput): CTagsAggExp!
+}
+
+type CTagTypesAggExp {
+  _count: Int!
+  definition: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CTagTypesBoolExp {
+  _and: [CTagTypesBoolExp!]
+  _not: CTagTypesBoolExp
+  _or: [CTagTypesBoolExp!]
+  definition: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+  tags: CTagsBoolExp
+}
+
+input CTagTypesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CTagTypesOrderBy!]
+  where: CTagTypesBoolExp
+}
+
+input CTagTypesOrderBy {
+  definition: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+type CTags {
+  description: String1!
+  id: String1!
+  name: String1!
+  profileTags(limit: Int, offset: Int, order_by: [CProfileTagsOrderBy!], where: CProfileTagsBoolExp): [CProfileTags!]
+  profileTagsAggregate(filter_input: CProfileTagsFilterInput): CProfileTagsAggExp!
+  tagType: CTagTypes
+  tagTypeId: String1
+}
+
+type CTagsAggExp {
+  _count: Int!
+  description: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+  tagTypeId: StringAggExp!
+}
+
+input CTagsBoolExp {
+  _and: [CTagsBoolExp!]
+  _not: CTagsBoolExp
+  _or: [CTagsBoolExp!]
+  description: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+  profileTags: CProfileTagsBoolExp
+  tagType: CTagTypesBoolExp
+  tagTypeId: StringBoolExp
+}
+
+input CTagsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CTagsOrderBy!]
+  where: CTagsBoolExp
+}
+
+input CTagsOrderBy {
+  description: OrderBy
+  id: OrderBy
+  name: OrderBy
+  tagType: CTagTypesOrderBy
+  tagTypeId: OrderBy
+}
+
+type CUrlTypes {
+  definition: String1!
+  id: String1!
+  name: String1!
+  urls(limit: Int, offset: Int, order_by: [CUrlsOrderBy!], where: CUrlsBoolExp): [CUrls!]
+  urlsAggregate(filter_input: CUrlsFilterInput): CUrlsAggExp!
+}
+
+type CUrlTypesAggExp {
+  _count: Int!
+  definition: StringAggExp!
+  id: StringAggExp!
+  name: StringAggExp!
+}
+
+input CUrlTypesBoolExp {
+  _and: [CUrlTypesBoolExp!]
+  _not: CUrlTypesBoolExp
+  _or: [CUrlTypesBoolExp!]
+  definition: StringBoolExp
+  id: StringBoolExp
+  name: StringBoolExp
+  urls: CUrlsBoolExp
+}
+
+input CUrlTypesFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CUrlTypesOrderBy!]
+  where: CUrlTypesBoolExp
+}
+
+input CUrlTypesOrderBy {
+  definition: OrderBy
+  id: OrderBy
+  name: OrderBy
+}
+
+type CUrls {
+  coreTableName: CCoreTableNames
+  id: String1!
+  rowId: String1!
+  tableId: String1!
+  url: String1!
+  urlType: CUrlTypes
+  urlTypeId: String1
+}
+
+type CUrlsAggExp {
+  _count: Int!
+  id: StringAggExp!
+  rowId: StringAggExp!
+  tableId: StringAggExp!
+  url: StringAggExp!
+  urlTypeId: StringAggExp!
+}
+
+input CUrlsBoolExp {
+  _and: [CUrlsBoolExp!]
+  _not: CUrlsBoolExp
+  _or: [CUrlsBoolExp!]
+  coreTableName: CCoreTableNamesBoolExp
+  id: StringBoolExp
+  rowId: StringBoolExp
+  tableId: StringBoolExp
+  url: StringBoolExp
+  urlType: CUrlTypesBoolExp
+  urlTypeId: StringBoolExp
+}
+
+input CUrlsFilterInput {
+  limit: Int
+  offset: Int
+  order_by: [CUrlsOrderBy!]
+  where: CUrlsBoolExp
+}
+
+input CUrlsOrderBy {
+  coreTableName: CCoreTableNamesOrderBy
+  id: OrderBy
+  rowId: OrderBy
+  tableId: OrderBy
+  url: OrderBy
+  urlType: CUrlTypesOrderBy
+  urlTypeId: OrderBy
+}
+
+scalar Date
+
+type DateAggExp {
+  _count: Int!
+  _count_distinct: Int!
+}
+
+input DateBoolExp {
+  _eq: Date
+  _gt: Date
+  _gte: Date
+  _in: [Date!]
+  _is_null: Boolean
+  _lt: Date
+  _lte: Date
+}
+
+type EntityUrls {
+  id: String1
+  rowId: String1
+  tableId: String1
+  url: String1
+  urlType: CUrlTypes
+  urlTypeId: String1
+}
+
+input EntityUrlsBoolExp {
+  _and: [EntityUrlsBoolExp!]
+  _not: EntityUrlsBoolExp
+  _or: [EntityUrlsBoolExp!]
+  id: StringBoolExp
+  rowId: StringBoolExp
+  tableId: StringBoolExp
+  url: StringBoolExp
+  urlType: CUrlTypesBoolExp
+  urlTypeId: StringBoolExp
+}
+
+input EntityUrlsOrderBy {
+  id: OrderBy
+  rowId: OrderBy
+  tableId: OrderBy
+  url: OrderBy
+  urlType: CUrlTypesOrderBy
+  urlTypeId: OrderBy
+}
+
+scalar Float64
+
+scalar Int8
+
+type Int8AggExp {
+  _count: Int!
+  _count_distinct: Int!
+  avg: Float64!
+  count: Int64!
+  max: Int8!
+  min: Int8!
+  sum: Int64!
+}
+
+input Int8BoolExp {
+  _eq: Int8
+  _gt: Int8
+  _gte: Int8
+  _in: [Int8!]
+  _is_null: Boolean
+  _lt: Int8
+  _lte: Int8
+}
+
+scalar Int64
+
+type Mutation {
+  _no_fields_accessible: String
+}
+
+enum OrderBy {
+  """Sorts the data in ascending order"""
+  Asc
+  """Sorts the data in descending order"""
+  Desc
+}
+
+type ProductUrls {
+  id: String1
+  rowId: String1
+  tableId: String1
+  url: String1
+  urlType: CUrlTypes
+  urlTypeId: String1
+}
+
+input ProductUrlsBoolExp {
+  _and: [ProductUrlsBoolExp!]
+  _not: ProductUrlsBoolExp
+  _or: [ProductUrlsBoolExp!]
+  id: StringBoolExp
+  rowId: StringBoolExp
+  tableId: StringBoolExp
+  url: StringBoolExp
+  urlType: CUrlTypesBoolExp
+  urlTypeId: StringBoolExp
+}
+
+input ProductUrlsOrderBy {
+  id: OrderBy
+  rowId: OrderBy
+  tableId: OrderBy
+  url: OrderBy
+  urlType: CUrlTypesOrderBy
+  urlTypeId: OrderBy
+}
+
+type ProfileInfoUrls {
+  id: String1
+  rowId: String1
+  tableId: String1
+  url: String1
+  urlType: CUrlTypes
+  urlTypeId: String1
+}
+
+input ProfileInfoUrlsBoolExp {
+  _and: [ProfileInfoUrlsBoolExp!]
+  _not: ProfileInfoUrlsBoolExp
+  _or: [ProfileInfoUrlsBoolExp!]
+  id: StringBoolExp
+  rowId: StringBoolExp
+  tableId: StringBoolExp
+  url: StringBoolExp
+  urlType: CUrlTypesBoolExp
+  urlTypeId: StringBoolExp
+}
+
+input ProfileInfoUrlsOrderBy {
+  id: OrderBy
+  rowId: OrderBy
+  tableId: OrderBy
+  url: OrderBy
+  urlType: CUrlTypesOrderBy
+  urlTypeId: OrderBy
+}
+
+type Query {
+  assetDeployments(limit: Int, offset: Int, order_by: [CAssetDeploymentsOrderBy!], where: assetDeploymentsBoolExp): [CAssetDeployments!]
+  assetDeploymentsAggregate(filter_input: CAssetDeploymentsFilterInput): CAssetDeploymentsAggExp
+  assetStandards(limit: Int, offset: Int, order_by: [CAssetStandardsOrderBy!], where: CAssetStandardsBoolExp): [CAssetStandards!]
+  assetStandardsAggregate(filter_input: CAssetStandardsFilterInput): CAssetStandardsAggExp
+  assetStatuses(limit: Int, offset: Int, order_by: [CAssetStatusesOrderBy!], where: CAssetStatusesBoolExp): [CAssetStatuses!]
+  assetStatusesAggregate(filter_input: CAssetStatusesFilterInput): CAssetStatusesAggExp
+  assetSupportTypes(limit: Int, offset: Int, order_by: [CAssetSupportTypesOrderBy!], where: CAssetSupportTypesBoolExp): [CAssetSupportTypes!]
+  assetSupportTypesAggregate(filter_input: CAssetSupportTypesFilterInput): CAssetSupportTypesAggExp
+  assetTypes(limit: Int, offset: Int, order_by: [CAssetTypesOrderBy!], where: CAssetTypesBoolExp): [CAssetTypes!]
+  assetTypesAggregate(filter_input: CAssetTypesFilterInput): CAssetTypesAggExp
+  assets(limit: Int, offset: Int, order_by: [CAssetsOrderBy!], where: CAssetsBoolExp): [CAssets!]
+  assetsAggregate(filter_input: CAssetsFilterInput): CAssetsAggExp
+  coreTableNames(limit: Int, offset: Int, order_by: [CCoreTableNamesOrderBy!], where: CCoreTableNamesBoolExp): [CCoreTableNames!]
+  coreTableNamesAggregate(filter_input: CCoreTableNamesFilterInput): CCoreTableNamesAggExp
+  countries(limit: Int, offset: Int, order_by: [CCountriesOrderBy!], where: CCountriesBoolExp): [CCountries!]
+  countriesAggregate(filter_input: CCountriesFilterInput): CCountriesAggExp
+  deploymentTypes(limit: Int, offset: Int, order_by: [CDeploymentTypesOrderBy!], where: CDeploymentTypesBoolExp): [CDeploymentTypes!]
+  deploymentTypesAggregate(filter_input: CDeploymentTypesFilterInput): CDeploymentTypesAggExp
+  derivativeAssets(limit: Int, offset: Int, order_by: [CDerivativeAssetsOrderBy!], where: CDerivativeAssetsBoolExp): [CDerivativeAssets!]
+  derivativeAssetsAggregate(filter_input: CDerivativeAssetsFilterInput): CDerivativeAssetsAggExp
+  entities(limit: Int, offset: Int, order_by: [CEntitiesOrderBy!], where: CEntitiesBoolExp): [CEntities!]
+  entitiesAggregate(filter_input: CEntitiesFilterInput): CEntitiesAggExp
+  entityTypes(limit: Int, offset: Int, order_by: [CEntityTypesOrderBy!], where: CEntityTypesBoolExp): [CEntityTypes!]
+  entityTypesAggregate(filter_input: CEntityTypesFilterInput): CEntityTypesAggExp
+  productAssetRelationships(limit: Int, offset: Int, order_by: [CProductAssetRelationshipsOrderBy!], where: CProductAssetRelationshipsBoolExp): [CProductAssetRelationships!]
+  productAssetRelationshipsAggregate(filter_input: CProductAssetRelationshipsFilterInput): CProductAssetRelationshipsAggExp
+  productDeployments(limit: Int, offset: Int, order_by: [CProductDeploymentsOrderBy!], where: CProductDeploymentsBoolExp): [CProductDeployments!]
+  productDeploymentsAggregate(filter_input: CProductDeploymentsFilterInput): CProductDeploymentsAggExp
+  productStatuses(limit: Int, offset: Int, order_by: [CProductStatusesOrderBy!], where: CProductStatusesBoolExp): [CProductStatuses!]
+  productStatusesAggregate(filter_input: CProductStatusesFilterInput): CProductStatusesAggExp
+  productTypes(limit: Int, offset: Int, order_by: [CProductTypesOrderBy!], where: CProductTypesBoolExp): [CProductTypes!]
+  productTypesAggregate(filter_input: CProductTypesFilterInput): CProductTypesAggExp
+  products(limit: Int, offset: Int, order_by: [CProductsOrderBy!], where: CProductsBoolExp): [CProducts!]
+  productsAggregate(filter_input: CProductsFilterInput): CProductsAggExp
+  profileInfos(limit: Int, offset: Int, order_by: [CProfileInfosOrderBy!], where: CProfileInfosBoolExp): [CProfileInfos!]
+  profileInfosAggregate(filter_input: CProfileInfosFilterInput): CProfileInfosAggExp
+  profileInfosById(id: String1!): CProfileInfos
+  profileSectors(limit: Int, offset: Int, order_by: [CProfileSectorsOrderBy!], where: CProfileSectorsBoolExp): [CProfileSectors!]
+  profileSectorsAggregate(filter_input: CProfileSectorsFilterInput): CProfileSectorsAggExp
+  profileStatuses(limit: Int, offset: Int, order_by: [CProfileStatusesOrderBy!], where: CProfileStatusesBoolExp): [CProfileStatuses!]
+  profileStatusesAggregate(filter_input: CProfileStatusesFilterInput): CProfileStatusesAggExp
+  """Selects multiple objects from the model. Model description:  """
+  profileTags(limit: Int, offset: Int, order_by: [CProfileTagsOrderBy!], where: CProfileTagsBoolExp): [CProfileTags!]
+  profileTagsAggregate(filter_input: CProfileTagsFilterInput): CProfileTagsAggExp
+  profileTypes(limit: Int, offset: Int, order_by: [CProfileTypesOrderBy!], where: CProfileTypesBoolExp): [CProfileTypes!]
+  profileTypesAggregate(filter_input: CProfileTypesFilterInput): CProfileTypesAggExp
+  roots(limit: Int, offset: Int, order_by: [CRootsOrderBy!], where: CRootsBoolExp): [CRoots!]
+  rootsAggregate(filter_input: CRootsFilterInput): CRootsAggExp
+  smartContractDeployments(limit: Int, offset: Int, order_by: [CSmartContractDeploymentsOrderBy!], where: CSmartContractDeploymentsBoolExp): [CSmartContractDeployments!]
+  smartContractDeploymentsAggregate(filter_input: CSmartContractDeploymentsFilterInput): CSmartContractDeploymentsAggExp
+  smartContracts(limit: Int, offset: Int, order_by: [CSmartContractsOrderBy!], where: CSmartContractsBoolExp): [CSmartContracts!]
+  smartContractsAggregate(filter_input: CSmartContractsFilterInput): CSmartContractsAggExp
+  socialTypes(limit: Int, offset: Int, order_by: [CSocialTypesOrderBy!], where: CSocialTypesBoolExp): [CSocialTypes!]
+  socialTypesAggregate(filter_input: CSocialTypesFilterInput): CSocialTypesAggExp
+  socials(limit: Int, offset: Int, order_by: [CSocialsOrderBy!], where: CSocialsBoolExp): [CSocials!]
+  socialsAggregate(filter_input: CSocialsFilterInput): CSocialsAggExp
+  """
+  Selects multiple objects from the model. Model description: Table mapping product support relationships
+  """
+  supportsProducts(limit: Int, offset: Int, order_by: [CSupportsProductsOrderBy!], where: CSupportsProductsBoolExp): [CSupportsProducts!]
+  supportsProductsAggregate(filter_input: CSupportsProductsFilterInput): CSupportsProductsAggExp
+  tagTypes(limit: Int, offset: Int, order_by: [CTagTypesOrderBy!], where: CTagTypesBoolExp): [CTagTypes!]
+  tagTypesAggregate(filter_input: CTagTypesFilterInput): CTagTypesAggExp
+  tags(limit: Int, offset: Int, order_by: [CTagsOrderBy!], where: CTagsBoolExp): [CTags!]
+  tagsAggregate(filter_input: CTagsFilterInput): CTagsAggExp
+  urlTypes(limit: Int, offset: Int, order_by: [CUrlTypesOrderBy!], where: CUrlTypesBoolExp): [CUrlTypes!]
+  urlTypesAggregate(filter_input: CUrlTypesFilterInput): CUrlTypesAggExp
+  urlTypesById(id: String1!): CUrlTypes
+  urls(limit: Int, offset: Int, order_by: [CUrlsOrderBy!], where: CUrlsBoolExp): [CUrls!]
+  urlsAggregate(filter_input: CUrlsFilterInput): CUrlsAggExp
+  urlsById(id: String1!): CUrls
+}
+
+type SocialUrls {
+  id: String1
+  rowId: String1
+  tableId: String1
+  url: String1
+  urlType: CUrlTypes
+  urlTypeId: String1
+}
+
+input SocialUrlsBoolExp {
+  _and: [SocialUrlsBoolExp!]
+  _not: SocialUrlsBoolExp
+  _or: [SocialUrlsBoolExp!]
+  id: StringBoolExp
+  rowId: StringBoolExp
+  tableId: StringBoolExp
+  url: StringBoolExp
+  urlType: CUrlTypesBoolExp
+  urlTypeId: StringBoolExp
+}
+
+input SocialUrlsOrderBy {
+  id: OrderBy
+  rowId: OrderBy
+  tableId: OrderBy
+  url: OrderBy
+  urlType: CUrlTypesOrderBy
+  urlTypeId: OrderBy
+}
+
+scalar String1
+
+type StringAggExp {
+  _count: Int!
+  _count_distinct: Int!
+  max: String1!
+  min: String1!
+}
+
+input StringBoolExp {
+  _contains: String1
+  _eq: String1
+  _in: [String1!]
+  _is_null: Boolean
+  _like: String1
+}
+
+type Subscription {
+  _no_fields_accessible: String
+}
+
+input assetDeploymentsBoolExp {
+  _and: [assetDeploymentsBoolExp!]
+  _not: assetDeploymentsBoolExp
+  _or: [assetDeploymentsBoolExp!]
+  asset: CAssetsBoolExp
+  assetId: StringBoolExp
+  deploymentId: StringBoolExp
+  id: StringBoolExp
+  smartContractDeployment: CSmartContractDeploymentsBoolExp
+}
