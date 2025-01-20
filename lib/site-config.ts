@@ -6,10 +6,14 @@ export const siteConfig = {
     light: '/solana.svg'
   },
   pageDescription: 'Explore The Grids data on the Solana ecosystem',
-  filterByProductIds: ['22'], // Used to filter which blockchains to show in the full list.
-  blockchainIds: ['22'], // Filter default options. Filters the options of (productSupports, productDeployedOnFilter and assetDeployedOnFilter)
-  blockchainProductTypeIds: ['15', '16', '17'], // Filter default options. used by productDeployedOnFilter.
   tags: [], // Filter default options. used by tagsFilter.
   displayQueries: true,
-  productSupportsAssetTicker: [] // Eg. ['ETH', 'BTC']
+  allowHeroFiltersSearch: true,
+  overrideFilterValues: {
+    productDeployedOn: ['22'],
+    productTypes: [],
+    productIds: ['22'],
+    productAssetRelationships: [],
+    tags: []
+  }
 };
