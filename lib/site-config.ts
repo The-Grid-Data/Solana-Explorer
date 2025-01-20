@@ -6,7 +6,6 @@ export const siteConfig = {
     light: '/solana.svg'
   },
   pageDescription: 'Explore The Grids data on the Solana ecosystem',
-  tags: [], // Filter default options. used by tagsFilter.
   displayQueries: true,
   allowHeroFiltersSearch: true,
   overrideFilterValues: {
