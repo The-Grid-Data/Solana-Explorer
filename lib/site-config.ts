@@ -10,7 +10,7 @@ export const siteConfig = {
   allowHeroFiltersSearch: true,
   overrideFilterValues: {
     //overrideFilterValues: affects both the options list and the searchquery conditions
-    productDeployedOn: [],
+    productDeployedOn: ['22'],
     supportsProducts: [],
     productTypes: [],
     productAssetRelationships: [],
