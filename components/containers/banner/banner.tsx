@@ -8,6 +8,7 @@ export const Banner = () => {
           href="https://thegrid.id/legal/web-services-terms"
           className="underline"
         >
+          {' '}
           The Grid&apos;s
         </a>{' '}
         validated Solana data layer which is in Beta
