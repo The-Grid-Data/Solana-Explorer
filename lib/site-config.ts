@@ -11,11 +11,11 @@ export const siteConfig = {
   overrideFilterValues: {
     //overrideFilterValues: affects both the options list and the searchquery conditions
     productDeployedOn: ['22'],
-    supportsProducts: [],
+    supportsProducts: ['22'],
     productTypes: [],
     productAssetRelationships: [],
     tags: [],
-    productIds: []
+    productIds: ['22']
   },
   overrideOptionsFilterValues: {
     //overrideOptionsFilterValues: only affects the options list for the filter
